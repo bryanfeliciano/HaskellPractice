@@ -61,3 +61,25 @@
 -- sortArray [] = []
 -- sortArray xs = go xs sortedOdds
 --   where sortedOdds = sort . filter odd $ xs
+
+-- basicOp :: Char -> (Int -> Int -> Int) 
+-- basicOp x
+--   | x == '+' = (+)
+--   | x == '-' = (-)
+--   | x == '*' = (*)
+--   | x == '/' = div
+
+--is the elem within the arr?
+-- check :: Eq a => [a] -> a -> Bool
+-- check [] a = False
+-- check (x:xs) a = 
+--   if x == a then
+--     True
+--   else
+--     check xs a
+
+--count of elem in string
+--remember using length works with the filter method
+-- getCount :: String -> Int
+-- getCount = length . filter (`elem` "aeiou")
+
