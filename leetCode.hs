@@ -1,4 +1,5 @@
 import qualified Data.Set as S
+import Data.Char
 --two sum leetcode algorythm using "any" keyword
 --applying any to lambda function 
 -- /= just means not equal
@@ -11,3 +12,16 @@ findOutlier::[Int]->Int
 findOutlier xs
          |[n]<-filter even xs = n
          |[n]<-filter odd  xs = n
+
+--square and sum all elem within a list
+squareSum :: [Integer] -> Integer
+squareSum = sum . map (^2)
+
+---replace alphabet elem with placement
+alphabetPosition :: String -> String
+alphabetPosition = unwords . filter ("" /= ) . map charReplace
+
+charReplace :: Char -> [Char]
+charReplace c =  maybe "" show (lookup (toLower c) dict)
+
+dict = zip ['a'..'z'] [1..26]
