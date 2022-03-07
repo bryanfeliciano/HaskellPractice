@@ -1,5 +1,6 @@
 import qualified Data.Set as S
 import Data.Char
+import Data.List
 --two sum leetcode algorythm using "any" keyword
 --applying any to lambda function 
 -- /= just means not equal
@@ -25,3 +26,9 @@ charReplace :: Char -> [Char]
 charReplace c =  maybe "" show (lookup (toLower c) dict)
 
 dict = zip ['a'..'z'] [1..26]
+
+---return all oddly appearing integers in a list
+findOdd :: [Int] -> Int
+findOdd xs = elim (sort xs)
+elim [x] = x
+elim (x:y:xs) = if x == y then elim xs else x
