@@ -32,3 +32,16 @@ findOdd :: [Int] -> Int
 findOdd xs = elim (sort xs)
 elim [x] = x
 elim (x:y:xs) = if x == y then elim xs else x
+
+---Given a string of digits, you should replace any digit below 5 with '0' and any digit 5 and above with '1'. Return the resulting string.
+fakeBin :: String -> String
+fakeBin = map (\c -> if c < '5' then '0' else '1' )
+
+---You will be given a number and you will need to return it as a string in Expanded Form. For example:
+-- expandedForm 12    -- Should return '10 + 2'
+-- expandedForm 42    -- Should return '40 + 2'
+-- expandedForm 70304 -- Should return '70000 + 300 + 4'
+-- NOTE: All numbers will be whole numbers greater than 0.
+---intercalate xs xss is equivalent to (concat (intersperse xs xss)). It inserts the list xs in between the lists in xss and concatenates the result.
+expandedForm :: Int -> String
+expandedForm = intercalate " + " . map(\(n, c) ->  c : replicate n '0' ) . reverse . filter ((/='0') . snd) . zip [0..] . reverse . show
