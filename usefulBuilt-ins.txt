@@ -1,0 +1,7 @@
+iterate->creates an infinite list where the first item is calculated by applying the function on the secod argument, the second item by applying the function on the previous result and so on.
+takeWhile->creates a list from another one, it inspects the original list and takes from it its elements to the moment when the condition fails, then it stops processing.
+filter->filters out or filters in elements
+even and odd-> useful for expressing base cases and within lambda functions
+XOR->is the exclusive-or function, which evaluates to True if either one or the other argument is True , but not both; and False otherwise.
+map-> map out elements in a lits or other structure.
+fold (l or r)->higher order functions that process a data structure in some order and build a return value.
