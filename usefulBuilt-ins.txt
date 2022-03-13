@@ -5,3 +5,4 @@ even and odd-> useful for expressing base cases and within lambda functions
 XOR->is the exclusive-or function, which evaluates to True if either one or the other argument is True , but not both; and False otherwise.
 map-> map out elements in a lits or other structure.
 fold (l or r)->higher order functions that process a data structure in some order and build a return value.
+merge->located in Data.List.Utils (merge)-> built in that merges 2 lists.
