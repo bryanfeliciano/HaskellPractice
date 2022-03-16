@@ -83,3 +83,17 @@
 -- getCount :: String -> Int
 -- getCount = length . filter (`elem` "aeiou")
 
+--- if elem is in list more than once return (  otherwise return )
+--- targeted length of elem and then used a helper function
+--     duplicateEncode :: String -> String
+-- duplicateEncode xs = map encode xs' where
+--   xs' = map toLower xs
+--   encode c = if length (filter (== c) xs') > 1 then ')' else '('
+
+---keep sum of pos on x and neg on xs
+-- countPositivesSumNegatives :: Maybe [Int] -> [Int]
+-- countPositivesSumNegatives Nothing = []
+-- countPositivesSumNegatives (Just []) = []
+-- countPositivesSumNegatives (Just xs) = [length pos, sum neg]
+--     where pos = filter (>0) xs
+--           neg = filter (<0) xs
