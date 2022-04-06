@@ -1,0 +1,49 @@
+--initial attempts--
+
+-- type Drink = [String,Int,Double]
+-- type Balance = Double
+-- type Inventory = [Drink]
+-- data Dispense = 
+--     Purchased Drink Balance
+--     | OutOfStock Drink
+--     | PurchaseFailed String
+--     deriving (Eq, Show)
+-- data VendingMachine = 
+--     Products Inventory
+--     deriving (Eq, Show)
+-- --functions--
+-- --check available inventory function--
+-- --takes in Vending Machine and compares input to product--
+-- --make it a helper function within purchase--
+-- --checkbal would be the same--
+-- --purchase function--
+-- purchase :: Drink -> Balance -> Dispense
+-- purchase d@(_,_,b) bal
+--          |(b <= bal) = Purchased Drink Balance
+--          |(b > bal)  = PurchaseFailed "insufficient balance"
+-- --if item is both in stock and wallet has enough balance--
+--     --then dispense purchased drink--
+--     --optionally update the inventory count--
+           --code to refactor--
+-- data VendingMachine = VendingMachine { 
+--                                         product :: String 
+--                                       , price :: Double
+--                                       , ammount :: Int 
+--                                       }
+--                                       deriving (Show)
+-- data UserWallet = UserWallet {
+--                                balance :: Int
+--                              }
+-- displayOptions :: String -> IO ()
+-- displayOptions n = putStrLn n
+-- -- inventoryStatus :: p -> String
+-- -- inventoryStatus n
+-- --           |(ammount >= 1) = "item in stock"
+-- --           |otherwise = "item out of stock"
+-- dispenseItem :: [Char] -> [[Char]] -> [Char]
+-- dispenseItem n (x:xs)
+--          |( n == x ) = "enjoy your" ++ n
+--          |( n /= x ) = dispenseItem n xs
+--          |otherwise = "sorry " ++  n  ++ "is no longer in stock"
+-- --this should remove 1 of the item, use monad?--
+-- products =  [("coke",1.00,20),("pepsi",1.00,20),("sprite",1.00,20)]
