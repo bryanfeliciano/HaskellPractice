@@ -38,9 +38,8 @@ gcdfunc a b = gcd (b `mod` a)a
 -- msort [a] = [a]
 -- msort xs = merge (msort (firstHalf xs)) (msort (secondHalf xs))
 
--- firstHalf  xs = let { n = length xs } in take (div n 2) xs
--- secondHalf xs = let { n = length xs } in drop (div n 2) xs
----msort worked in my code editor but repl doesnt accept the import of merge
+firstHalf  xs = let { n = length xs } in take (div n 2) xs
+secondHalf xs = let { n = length xs } in drop (div n 2) xs
 
 qsort :: Ord a => [a] -> [a]
 qsort [] = []
@@ -49,7 +48,7 @@ qsort (x:xs) =
       biggerSorted = qsort [a | a <- xs, a > x]
   in  smallerSorted ++ [x] ++ biggerSorted
 
-  zip'::[a]->[b]->[(a,b)]
-  zip' [] _ = []
-  zip' _ [] = []
-  zip' (x:xs) (y:ys) = (x,y): zip' xs ys
+--   zip'::[a]->[b]->[(a,b)]
+--   zip' [] _  =  []
+--   zip' _ []  =  []
+--   zip' (x:xs) (y:ys) = (x,y): zip' xs ys
