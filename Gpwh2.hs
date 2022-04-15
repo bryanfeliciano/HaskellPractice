@@ -1,6 +1,7 @@
 module Gphw2 where
 
 import Data.List
+import Data.Char
 ------chapter 5-----
 --url and api builder examples--
 
@@ -41,5 +42,27 @@ binaryPartialApplication f = (\x -> f x)
 --use length op /2 to split the list in two
 -- use the fst op to look for the element
 
--------------chapter 7----------------
+--Chapter 9--
+--higher order functions (functions that take in other functions as input/argument)--
+--most notably folds--
 
+--my initial version--
+reElem e (x:xs) = if e == x 
+                     then [x] 
+                    else reElem e xs
+
+myElem val myList = (length filteredList) /= 0
+ where filteredList = filter (== val) myList
+
+isPalendrome' text = precessedtext == reverse precessedtext
+  where noSpaces = filter (/= ' ') text
+        precessedtext = map toLower noSpaces
+
+--harmonic series algo--
+harmonic n = sum (take n seriesValues)
+  where seriesPairs = zip (cycle [1.0]) [1.0,2.0 ..]
+        seriesValues = map (\pair -> (fst pair)/(snd pair)) seriesPairs
+
+-- Chapter 10 woooo!--
+-- Functional oop with robots?--
+--First capstone project!!!--
